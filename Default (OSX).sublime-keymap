@@ -1,6 +1,6 @@
 [
 	{
-		"keys": ["super+shift+,"],
+		"keys": ["control+super+,"],
 		"command": "pref_open_setting_file"
 	},
 	{
