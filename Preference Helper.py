@@ -61,7 +61,8 @@ class PrefOpenSettingFileCommand(sublime_plugin.WindowCommand):
 
 	def run(self):
 
-		resources = [resource[9:] for resource in find_resources("*.sublime-settings")]
+		resources = find_resources("*.sublime-settings") + find_resources("*.sublime-keymap")
+		resources = [resource[9:] for resource in resources]
 		def on_done(i):
 			if i >= 0:
 				self.window.run_command("open_file", { "file": "${packages}/%s" % resources[i]})

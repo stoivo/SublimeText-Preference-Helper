@@ -32,8 +32,13 @@ def decode_value(string):
 		return json.loads("\n".join(lines))
 
 def is_sublime_settings(view):
+	def corrct_syntax():
+		return view.match_selector(0, "source.json") or view.match_selector(0, "source.sublime-settings") or view.match_selector(0, "source.sublimekeymap")
+	def correct_ending():
+		return view.file_name().endswith(".sublime-settings") or view.file_name().endswith(".sublime-keymap")
+
 	try:
-		return view.match_selector(0, "source.json") and os.path.dirname(view.file_name()).startswith(sublime.packages_path()) and view.file_name().endswith(".sublime-settings")
+		return corrct_syntax() and os.path.dirname(view.file_name()).startswith(sublime.packages_path()) and correct_ending()
 	except:
 		return False
 

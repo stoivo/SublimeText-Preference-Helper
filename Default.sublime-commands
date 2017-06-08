@@ -4,7 +4,7 @@
 		"command": "pref_toggle_setting_file"
 	},
 	{
-		"caption": "Preference Helper: Open *.sublime-settings",
+		"caption": "Preference Helper: Open *.sublime-settings and *.sublime-keymap",
 		"command": "pref_open_setting_file"
 	},
 	{
