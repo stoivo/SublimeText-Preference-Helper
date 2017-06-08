@@ -37,6 +37,9 @@ class PreferenceHelperListener(sublime_plugin.EventListener):
 
 class PrefFillSettingFileCommand(sublime_plugin.TextCommand):
 
+	def is_enabled(self):
+		return is_sublime_settings(self.view)
+
 	def run(self, edit):
 
 		point = self.view.sel()[0].a if self.view.sel()[0].a < self.view.sel()[0].b else self.view.sel()[0].b
