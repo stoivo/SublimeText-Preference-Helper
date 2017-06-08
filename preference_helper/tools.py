@@ -33,7 +33,8 @@ def decode_value(string):
 
 def is_sublime_settings(view):
 	try:
-		return view.match_selector(0, "source.json") and os.path.dirname(view.file_name()).startswith(sublime.packages_path()) and view.file_name().endswith(".sublime-settings")
+		corrct_syntax = view.match_selector(0, "source.json") or view.match_selector(0, "source.sublime-settings")
+		return corrct_syntax and os.path.dirname(view.file_name()).startswith(sublime.packages_path()) and view.file_name().endswith(".sublime-settings")
 	except:
 		return False
 

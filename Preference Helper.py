@@ -16,7 +16,7 @@ class PreferenceHelperListener(sublime_plugin.EventListener):
 			if package_name != "Default" and settings.get("protect_default_settings", True) and not is_user_sublime_setting(view) and not view.settings().get("pref_exclude_package"):
 				exclude_packages = settings.get("exclude_packages", [])
 				return package_name not in exclude_packages
-		return False
+		return view.is_read_only()
 
 	def on_activated(self, view):
 		if view.size():
