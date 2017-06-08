@@ -8,6 +8,10 @@
 		"command": "pref_open_setting_file"
 	},
 	{
+		"caption": "Preference Helper: Prefill from Default.sublime-settings",
+		"command": "pref_fill_setting_file"
+	},
+	{
 		"caption": "Preference Helper: Disable Read-only for Package",
 		"command": "pref_exclude_package"
 	},
